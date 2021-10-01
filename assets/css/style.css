@@ -1,0 +1,27 @@
+:root {
+    --light: #87ceeb;
+    --midtone: grey;
+
+}
+
+header{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #87ceeb;
+    border-bottom: 7px solid grey;
+    color: grey;
+    margin: 0px;
+    border
+}
+
+body h3, div, button, p{
+    margin: 10px;
+}
+
+.stack{
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
