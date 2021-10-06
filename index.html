@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
 <header>
     <!-- Add gifs of Tornado and a rainbow maybe -->
-    <h1>Weather Dashboard</h1> 
+    <span id="header-items">
+        <iframe src="https://giphy.com/embed/U8HBAhUbUYA1F0TwRV" width="75" height="75" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <p>
+            <a href="https://giphy.com/stickers/sun-konfettikotze-holiday-U8HBAhUbUYA1F0TwRV">via GIPHY</a>
+        </p>
+    </span>
+    <span id="header-items">
+        <h1>Weather Dashboard</h1> 
+    </span>
+    <span id="header-items">
+        <img src="./assets/imgs/Tornado.gif"/>
+    </span>
 </header>
 <body>
     <aside>
@@ -18,12 +30,9 @@
         <p>
             <input id="search" type="text" placeholder="City Name"/>
         </p>
-        <!-- Loading status -->
-        <!-- <div class="spinner-border" role="status"></div>
-        <span class="visually-hidden">Loading...</span> -->
         <button id="searchbtn" type="button" class="btn btn-light">Search</button>
         <hr/>
-        <h3>Search History</h3>
+        <h3 id="search-history" >Search History</h3>
     </aside>
 
     <section>
