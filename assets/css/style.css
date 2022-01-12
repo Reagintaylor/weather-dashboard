@@ -22,11 +22,33 @@ header{
 
 body h3, div, button, p{
     margin: 10px;
-}
-
-.stack{
     display: flex;
-    flex-direction: column;
-    visibility: hidden;
 }
 
+/* .stack{
+    display: flex;
+    /* flex-direction: column; */
+    visibility: hidden;
+} 
+
+.container{
+    display: flex;
+}
+
+/* Commented out to see the final layout */
+#daily-weather, #weekly-weather{
+    /* visibility: collapse; */
+    flex-direction: row;
+}
+
+aside{
+    flex-direction: column;
+}
+
+.city-search, .history-cont{
+    flex-direction: column;
+}
+
+.weather-card{
+    flex-direction: column;
+}
