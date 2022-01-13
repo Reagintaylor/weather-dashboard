@@ -25,14 +25,15 @@ body h3, div, button, p{
     display: flex;
 }
 
-/* .stack{
+ .stack{
     display: flex;
-    /* flex-direction: column; */
-    visibility: hidden;
 } 
 
 .container{
     display: flex;
+    /* visibility: hidden; */
+    
+    
 }
 
 /* Commented out to see the final layout */
@@ -45,10 +46,10 @@ aside{
     flex-direction: column;
 }
 
-.city-search, .history-cont{
+#city-search, #history-cont{
     flex-direction: column;
 }
 
-.weather-card{
+#weather-card{
     flex-direction: column;
 }

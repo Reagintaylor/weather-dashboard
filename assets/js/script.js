@@ -2,36 +2,50 @@
 var searchBtn = document.querySelector("#searchbtn")
 var searchInput = document.querySelector("#search")
 var searchHistory = document.querySelector("#search-history")
-var errorHolder = document.querySelector("#weather-card")
 var apiKey = ("adbfd834acb2ad11716672b9a64679a0")
   //Check if this works 
 
 function getWeatherData(city){
-    
     var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
 
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
-      
-      
     })
     .then(function (data) {
         console.log(data)
-        // localStorage
+        var weather = data
+        localStorage.setItem("weatherData", JSON.stringify(weather));
+        displayWeather(weather);
     });
-
-    // //Current date and time 
+    //Current date and time 
+    // var currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+    // var today = moment().format('dddd')
   
-    var currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+    // dailyWeather.text
+    // var weeklyWeather = document.querySelector("#weekly-weather").setAttribute("style", "visibility: visible;")
+}
 
-    // var today = moment().format('dddd');
-    // // Show the daily weather data
-    var dailyWeather = document.querySelector("#daily-weather").setAttribute("style", "visibility: visible;")
-    var currentWeather = document.querySelector(".card-text")
-    currentWeather.innerHTML = "City: " +  city + '.<br />' + "Date:" + moment().format('MMMM Do YYYY, h:mm:ss a'); + '.<br />' 
+function displayWeather(weather){
+  var currentDate = moment().format("MMM Do YY"); 
+  var weatherCard = document.querySelector(".card-body")
+  var weatherData = document.querySelector(".card-text")
+  var weatherDay = moment().format('dddd')
+  weatherData.textContent("City: " + weather.name + "<br />" 
+  + "Date: " + weatherDay + "<br />" +
+  weatherIcon()
+  + "Temp: " + weather.main.temp + "Humidity: " + weather.main.humidity + " <br />"
+  + "Wind Speed: "  + weather.wind.speed + "UV index: " + weather.UVindex)
+  weatherCard.appendChild(weatherData); 
+  weatherCard.appendChild(currentDate);
+  console.log(weatherData)
+  console.log(currentDate)
+}
 
-    var weeklyWeather = document.querySelector("#weekly-weather").setAttribute("style", "visibility: visible;")
+function weatherIcon(weather){
+  if(weather){
+    console.log(weather)
+  }
 }
 
 
@@ -41,10 +55,9 @@ function getCityInfo(){
     getWeatherData(city);
     historyLog(); // function to add the cities to the history
   } else {
-    const errorDiv = document.createElement("div");
-    const errorMsg = document.createTextNode("Hi there and greetings!");
+    const errorDiv = document.querySelector("#errorDiv");
+    const errorMsg = document.textContent("Make sure the city you entered is spelled correctly").setAttribute("style", "color: red;")
     errorDiv.appendChild(errorMsg);
-    errorHolder.appendChild(errorDiv);
   }
   
 }
