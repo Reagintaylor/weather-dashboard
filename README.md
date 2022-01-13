@@ -1,16 +1,19 @@
 # weather-dashboard
 
-Things I have to do
+ ## Description
 
-javascript
-    outline my javascript functions
-        local storage
+ - The weather dashboard is an app that allows you to see the weather for the current day as well as the weather for the week. 
 
-style with CSS
-    style the buttons that show up
-    Make the page look nicer
-    Set the fonts and basic styling
+ - My challenges with this app was getting the weather data to display. I have it in the console but getting it into local storage has been difficult. 
 
-HTML 
-    Add the bootstrap boxes for the weather results to go in
-    Add font-aweome of google fonts for styling
+## Table of Contents
+- [Installation](#Installation)
+- [Licenses](#Licences)
+- [Contributors](#Contributors)
+
+## Installation
+- Copy and paste the [link](https://reagintaylor.github.io/weather-dashboard/) of the app in your browser
+
+## Licenses
+
+## Contributors

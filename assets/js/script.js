@@ -33,19 +33,13 @@ function displayWeather(weather){
   var weatherDay = moment().format('dddd')
   weatherData.textContent("City: " + weather.name + "<br />" 
   + "Date: " + weatherDay + "<br />" +
-  weatherIcon()
+  weather.weather[0].icon
   + "Temp: " + weather.main.temp + "Humidity: " + weather.main.humidity + " <br />"
   + "Wind Speed: "  + weather.wind.speed + "UV index: " + weather.UVindex)
   weatherCard.appendChild(weatherData); 
   weatherCard.appendChild(currentDate);
   console.log(weatherData)
   console.log(currentDate)
-}
-
-function weatherIcon(weather){
-  if(weather){
-    console.log(weather)
-  }
 }
 
 
